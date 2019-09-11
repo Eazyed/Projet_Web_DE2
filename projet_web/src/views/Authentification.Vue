@@ -9,19 +9,19 @@
       >
         <b-form-input
           id="input-1"
-          v-model="form.email"
+          v-model="user.username"
           type="email"
           required
           placeholder="Enter email"
         ></b-form-input>
       </b-form-group>
 
-      <b-form-group id="input-group-2" label="Your Name:" label-for="input-2">
+      <b-form-group id="input-group-2" label="Your password:" label-for="input-2">
         <b-form-input
           id="input-2"
-          v-model="form.name"
+          v-model="user.password"
           required
-          placeholder="Enter name"
+          placeholder="Enter password"
         ></b-form-input>
       </b-form-group>
       <b-button type="submit" variant="primary">Submit</b-button>
@@ -36,16 +36,15 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
-import User from '@/models/user.ts'
+import {User} from '../models/User';
 
 @Component({
   components: {
-    HelloWorld,
+    HelloWorld
   },
 })
 export default class Authentification extends Vue {
-
-
+    private user:User = new User();
 }
 </script>
 
