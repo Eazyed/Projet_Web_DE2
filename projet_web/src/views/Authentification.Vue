@@ -45,6 +45,19 @@ import {User} from '../models/User';
 })
 export default class Authentification extends Vue {
     private user:User = new User();
+
+    mounted(){
+
+    }
+
+    private onSubmit(){
+
+    }
+
+    private onReset(){
+        this.user.password = '';
+        this.user.username = '';
+    }
 }
 </script>
 
