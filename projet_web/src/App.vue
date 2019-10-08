@@ -61,9 +61,17 @@
 
 <script lang="ts">
 import Vue from "vue";
+import { User } from "./models/User";
 export default class App extends Vue {
+
+
   public get isAuthentified() {
-    return false;
+    if(Vue.prototype.email == undefined){
+      Vue.prototype.email ='';
+    }
+    if (Vue.prototype.email.length > 0) {
+      return true;
+    }
   }
 }
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <!-- <div>
     <b-form @submit="onSubmit" @reset="onReset">
       <b-form-group
         id="input-group-1"
@@ -30,37 +30,59 @@
     <b-card class="mt-3" header="Form Data Result">
       <pre class="m-0">{{ form }}</pre>
     </b-card>
+  </div>-->
+
+  <div>
+    <form class="login" @submit.prevent="login" v-if="!isLoggedIn">
+      <h1>Sign in</h1>
+      <label>User name</label>
+      <input required v-model="user.username" type="text" placeholder="Snoopy" />
+      <label>Password</label>
+      <input required v-model="user.password" type="password" placeholder="Password" />
+      <hr />
+      <button type="submit">Login</button>
+    </form>
+    <b-card v-else title="Card Title" style="max-width: 20rem;" class="mb-2">
+      <b-button @click="logout" variant="primary">Log Out</b-button>
+    </b-card>
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
-import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
-import {User} from '../models/User';
+import { Component, Vue } from "vue-property-decorator";
+import HelloWorld from "@/components/HelloWorld.vue"; // @ is an alias to /src
+import { User } from "../models/User";
 
 @Component({
   components: {
     HelloWorld
-  },
+  }
 })
 export default class Authentification extends Vue {
-    private user:User = new User();
+  private user: User = new User();
 
-    mounted(){
+  private isLoggedIn: boolean = false;
 
+  mounted() {
+    if (Vue.prototype.email.length > 0) {
+      this.isLoggedIn = true;
     }
+  }
+  private login() {
+    debugger;
+    Vue.prototype.email = this.user.username;
+    Vue.prototype.password = this.user.password;
+    this.user.username='';
+    this.user.password='';
+    this.isLoggedIn = true;
+  }
 
-    private onSubmit(){
-
-    }
-
-    private onReset(){
-        this.user.password = '';
-        this.user.username = '';
-    }
+  private logout() {
+    Vue.prototype.email = '';
+    this.isLoggedIn = false;
+  }
 }
 </script>
 
 <style scoped>
-
 </style>
