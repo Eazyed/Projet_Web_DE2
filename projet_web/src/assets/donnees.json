@@ -1,0 +1,123 @@
+{
+    "Product":[
+        {
+            "description" : "La Berliner Groseille est une bière de style Berliner Weisse de la brasserie La Montagnarde. (située à Saint Jean D'Arvey en Savoie, France). Elle a été brassé selon la technique Sour Kettle. Acidulée et fruitée, elle contient près de 200 gr/l de grosseilles !",
+            "name" : "BERLINER GROSEILLE 33 CL",
+            "isInStock" : true,
+            "logopath" : "./berliner_groseille_33cl.jpg",
+            "price" : "3.80"
+        },
+        {
+            "description" : "Amulette est une bière de style Saison acidulée de la brasserie La Montagnarde (située à Saint Jean D'Arvey en Savoie, France). Elle a été réalisée en fermentation mixte avec du sarrasin, puis vieillie 6 mois en barrique avec infusion d'une fleur européenne : la Reine des prés.",
+            "name" : "AMULETTE 75 CL",
+            "isInStock" : true,
+            "logopath" : "./amulette_75_cl.jpg",
+            "price" : "13.90"
+        },
+        {
+            "description" : "Cuvée de Ranke est une bière de style Lambic de la brasserie De Ranke (Mouscron, Belgique). C'est un blend (mélange) de bière vieillie en barrique de chêne et de lambic. Un corps acidulé parsemée de notes boisées apportées par le vieillissement, du grand De Ranke !",
+            "name" : "CUVÉE DE RANKE 75 CL",
+            "isInStock" : false,
+            "logopath" : "./cuvee_de_ranke_75_cl.jpg",
+            "price" : "9.00"
+        },
+        {
+            "description" : "Suprême Grätzer est une bière artisanale de la Brasserie du Haut Buëch BHB (située dans la Drôme à Lus la Croix Haute dans le hameau de la Jarjatte). C'est la grande sœur de la Grätzer de chez BHB. Fumée, puissante, ronde.",
+            "name" : "SUPRÊME GRÄTZER - 50 CL",
+            "isInStock" : true,
+            "logopath" : "./supreme_graetzer_50_cl.jpg",
+            "price" : "8.40"
+        },
+        {
+            "description" : "La fameuse Kro, tant apprécié des petits et des grands.",
+            "name" : "KRONENBOURG 25 CL",
+            "isInStock" : true,
+            "logopath" : "./kronenbourg_25cl.jpg",
+            "price" : "0.42"
+        },
+        {
+            "description" : "La Rince Cochon est une bière à façon blonde à l'origine française",
+            "name" : "RINCE COCHON 33 CL",
+            "isInStock" : true,
+            "logopath" : "./rince_cochon.jpg",
+            "price" : "2.60"
+        },
+        {
+            "description" : "On dit merci qui ?, Merci à Jacquie et Michel pour cette bière blonde de caractère, un hommage aux fans qui enrichissent le mythe. Une bière qui en fera mousser plus d'un.",
+            "name" : "JACQUIE ET MICHEL 33 CL",
+            "isInStock" : true,
+            "logopath" : "./jacquie_et_michel_33cl.jpg",
+            "price" : "2.72"
+        },
+        {
+            "description" : "Fraichement sortie de la brasserie Faucigny, cette India Pale Ale saura satisfaire les plus pointilleux d'entre tous.",
+            "name" : "805 IPA 33 CL",
+            "isInStock" : true,
+            "logopath" : "./805_ipa_33_cl.jpg",
+            "price" : "3.60"
+        },
+        {
+            "description" : "Une bière au goût puissant et aux arômes de caramel. La bière Maximator est la plus intense de la gamme des bières Amsterdam. C’est une lager hollandaise de fermentation basse qui titre à 11,6° d'alcool. La puissance et l’intensité de son goût en font la référente chez les amateurs d’Amsterdam.",
+            "name" : "AMSTERDAM MAXIMATOR 50 CL",
+            "isInStock" : true,
+            "logopath" : "./amsterdam_maximator_50cl.jpg",
+            "price" : "1.84"
+        },
+        {
+            "description" : "L'unique bière d'abbaye brassée lors d'une pleine lune.",
+            "name" : "PAIX DIEU 33 CL",
+            "isInStock" : false,
+            "logopath" : "./paix_dieu_33cl.jpg",
+            "price" : "3.49"
+        },
+        {
+            "description" : "Une des bières les plus fortes du monde. 65%. Tout simplement.",
+            "name" : "ARMAGEDDON 33 CL",
+            "isInStock" : false,
+            "logopath" : "./armageddon_33cl.jpg",
+            "price" : "77.00"
+        },
+        {
+            "description" : "La Tokyo, une bière noire écossaise titrant à 16,5% d'alcool, venez l'affronter !",
+            "name" : "BREWDOG TOKYO 33 CL",
+            "isInStock" : true,
+            "logopath" : "./brewdog_tokyo_33cl.jpg",
+            "price" : "14.50"
+        },
+        {
+            "description" : "A l'origine, cette bière est un mélange de 2 bières, la Bush Ambrée, bien forte, et la gueuze pêche, bien fruitée. C'est sucré, c'est doux, et on la boit sans faire attention à ses 8,5%.",
+            "name" : "PECHE MEL BUSH 33 CL",
+            "isInStock" : true,
+            "logopath" : "./peche_mel_bush_33cl.jpg",
+            "price" : "2.60"
+        },
+        {
+            "description" : "Une bière trappiste hollandaise aux saveurs complexes inégalées.",
+            "name" : "TRAPPE QUADRUPEL 33 CL",
+            "isInStock" : true,
+            "logopath" : "./trappe_quadrupel_33cl.jpg",
+            "price" : "2.95"
+        },
+        {
+            "description" : "Une robe blond doré et un goût aux notes de fruits secs. Une bière ronde et chaleureuse.",
+            "name" : "BAVARIA 8.6 50 CL",
+            "isInStock" : true,
+            "logopath" : "./bavaria_86_50cl.jpg",
+            "price" : "1.74"
+        },
+        {
+            "description" : "Une bière ambrée parmi plus fortes au monde avec ses 13% d'alcool ! Le diable en bouteille ...",
+            "name" : "BELZEBUTH 25 CL",
+            "isInStock" : false,
+            "logopath" : "./belzebuth_25cl.jpg",
+            "price" : "2.55"
+        },
+        {
+            "description" : "Bière ambrée issue d'une recette du Moyen Age.",
+            "name" : "LA GOUDALE 33 CL",
+            "isInStock" : true,
+            "logopath" : "./goudale_33cl.jpg",
+            "price" : "1.66"
+        }
+    ]
+}
