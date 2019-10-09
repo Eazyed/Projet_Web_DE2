@@ -13,7 +13,7 @@
       {{item.description}}
     </b-card-text>
 
-    <b-button  v-if="item.isInStock" href="#" variant="primary">{{item.price}}</b-button>
+    <b-button  v-if="item.isInStock" href="#" variant="primary">{{item.price}} €</b-button>
     <b-button v-else href="#" variant="warning">Rupture</b-button>
   </b-card>
 
