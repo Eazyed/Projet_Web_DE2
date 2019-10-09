@@ -1,23 +1,24 @@
 <template>
 <div>
+  <b-card-group columns>
   <b-card
     v-for="item in itemsToDisplay"
     :key="item.name"
-    v-bind:title="item.name"
-    tag="article"
-    style="max-width: 20rem;"
+    :title="item.name"
+    style="b-center"
     class="mb-2"
   >
-    <b-card-img :src="require('../assets/'+item.logopath)"></b-card-img>
+    <b-card-img :src="require('../assets/'+item.logopath)" img-left style="max-width: 20rem;"></b-card-img>
     <b-card-text>
-      {{item.description}}
+      <h4>{{item.name}}</h4>
     </b-card-text>
 
     <b-button  v-if="item.isInStock" href="#" variant="primary">{{item.price}} €</b-button>
     <b-button v-else href="#" variant="warning">Rupture</b-button>
   </b-card>
-
+</b-card-group>
 </div>
+
 </template>
 
 <script lang="ts">
