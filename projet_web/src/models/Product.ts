@@ -6,6 +6,7 @@ export class Product {
     public logopath:string;
     public price:string;
     public id:string;
+    public quantity:number;
 
     constructor(){
         this.id='';
@@ -14,5 +15,6 @@ export class Product {
         this.isInStock=false;
         this.logopath='';
         this.price='-1';
+        this.quantity = 0;
     }
 }

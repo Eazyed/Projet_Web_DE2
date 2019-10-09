@@ -1,5 +1,12 @@
 <template>
-<div>{{itemToDisplay.id}}</div>
+<div>{{itemToDisplay.id}}
+    <b-input-group prepend="0" append="100" class="center">
+    <b-form-input v-model="quantity" type="range" min="0" max="100"></b-form-input>
+
+    </b-input-group>    
+    <b-button>Ajouter au panier</b-button>
+</div>
+
 </template>
 
 <script lang="ts">
@@ -16,6 +23,7 @@ import { ObjectMapper } from 'json-object-mapper';
 export default class ProductView extends Vue {
   private fullCatalog: Product[] = new Array<Product>();
   private itemToDisplay: Product = new Product();
+  private quantity:number=0;
 
   mounted() {
     this.GetCatalog();
@@ -24,7 +32,6 @@ export default class ProductView extends Vue {
             this.itemToDisplay=x;
         }
     })
-    //this.$route.params.productname
   }
   private GetCatalog(){      
       this.fullCatalog=ObjectMapper.deserializeArray(Product, json);
