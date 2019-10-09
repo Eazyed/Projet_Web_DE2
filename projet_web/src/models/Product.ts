@@ -1,3 +1,4 @@
+
 export class Product {
     public description:string;
     public name:string;

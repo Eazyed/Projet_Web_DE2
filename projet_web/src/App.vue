@@ -62,6 +62,7 @@
 <script lang="ts">
 import Vue from "vue";
 import { User } from "./models/User";
+import "reflect-metadata";
 
 export default class App extends Vue {
 
