@@ -1,8 +1,10 @@
 <template>
 <div>
   <b-card
-    title="Card Title"
-    img-src="https://picsum.photos/600/300/?image=25"
+    v-for="item in itemsToDisplay"
+    :key="item.name"
+    v-bind:title="item.name"
+    v-bind:img-src="'/assets/'+item.logopath"
     img-alt="Image"
     img-top
     tag="article"
@@ -10,10 +12,10 @@
     class="mb-2"
   >
     <b-card-text>
-      Some quick example text to build on the card title and make up the bulk of the card's content.
+      {{item.description}}
     </b-card-text>
 
-    <b-button href="#" variant="primary">Go somewhere</b-button>
+    <b-button href="#" variant="primary">{{item.price}}</b-button>
   </b-card>
 </div>
 </template>
@@ -22,6 +24,9 @@
 import { Component, Vue } from "vue-property-decorator";
 import HelloWorld from "@/components/HelloWorld.vue"; // @ is an alias to /src
 import { Product } from "../models/Product";
+import json from "../assets/donnees.json";
+import { ObjectMapper } from 'json-object-mapper';
+
 
 @Component({
   components: {
@@ -31,16 +36,17 @@ import { Product } from "../models/Product";
 export default class Authentification extends Vue {
   private fullCatalog: Product[] = new Array<Product>();
   private itemsToDisplay: Product[] = new Array<Product>();
-  private isLoggedIn: boolean = false;
 
   mounted() {
-    if (Vue.prototype.email.length > 0) {
-      this.isLoggedIn = true;
-    }
+    this.GetCatalog();
   }
   private GetCatalog(){
       //Todo Récupération des objets
-      this.fullCatalog.push(new Product());
+      debugger;
+
+      
+      this.fullCatalog=ObjectMapper.deserializeArray(Product, json);
+      this.itemsToDisplay=this.fullCatalog;
   }
 }
 </script>
