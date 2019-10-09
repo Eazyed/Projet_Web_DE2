@@ -4,19 +4,19 @@
     v-for="item in itemsToDisplay"
     :key="item.name"
     v-bind:title="item.name"
-    v-bind:img-src="'/assets/'+item.logopath"
-    img-alt="Image"
-    img-top
     tag="article"
     style="max-width: 20rem;"
     class="mb-2"
   >
+    <b-card-img :src="require('../assets/'+item.logopath)"></b-card-img>
     <b-card-text>
       {{item.description}}
     </b-card-text>
 
-    <b-button href="#" variant="primary">{{item.price}}</b-button>
+    <b-button  v-if="item.isInStock" href="#" variant="primary">{{item.price}}</b-button>
+    <b-button v-else href="#" variant="warning">Rupture</b-button>
   </b-card>
+
 </div>
 </template>
 
@@ -40,11 +40,7 @@ export default class Authentification extends Vue {
   mounted() {
     this.GetCatalog();
   }
-  private GetCatalog(){
-      //Todo Récupération des objets
-      debugger;
-
-      
+  private GetCatalog(){      
       this.fullCatalog=ObjectMapper.deserializeArray(Product, json);
       this.itemsToDisplay=this.fullCatalog;
   }
