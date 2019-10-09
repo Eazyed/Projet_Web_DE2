@@ -13,7 +13,6 @@
 
         <b-collapse id="nav-collapse" is-nav>
           <b-navbar-nav>
-            <b-nav-item to="/authent">Link</b-nav-item>
             <b-nav-item to="/catalog">Catalogue</b-nav-item>
           </b-navbar-nav>
 
@@ -35,10 +34,10 @@
               <!-- Using 'button-content' slot -->
 
               <template v-slot:button-content>
-                <em>Logged In</em>
+                <em>{{username}}</em>
               </template>
               <b-dropdown-item href="#">Profile</b-dropdown-item>
-              <b-dropdown-item href="#">Sign Out</b-dropdown-item>
+              <b-dropdown-item to="/authent">Sign Out</b-dropdown-item>
             </b-nav-item-dropdown>
 
             <!-- Using 'button-content' slot -->
@@ -82,6 +81,15 @@ export default class App extends Vue {
         }
         return false;
       }
+  }
+    private get username(){
+    if (this.isAuthentified){
+      return localStorage.getItem('username');
+    }
+  }
+  private logout() {
+    localStorage.setItem('username','');
+    this.$router.go(0);
   }
 }
 </script>
