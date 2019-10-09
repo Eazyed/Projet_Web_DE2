@@ -35,9 +35,9 @@
   <div>
     <form class="login" @submit.prevent="login" v-if="!isLoggedIn">
       <h1>Sign in</h1>
-      <label>User name </label>
+      <label>User name</label>
       <input required v-model="user.username" type="text" placeholder="Snoopy" />
-      <label>Password </label>
+      <label>Password</label>
       <input required v-model="user.password" type="password" placeholder="Password" />
       <hr />
       <button type="submit">Login</button>
@@ -61,36 +61,34 @@ import { User } from "../models/User";
 export default class Authentification extends Vue {
   private user: User = new User();
 
-  mounted() {
-  }
+  mounted() {}
 
-  private get isLoggedIn(){
-    if (localStorage.getItem('username') == undefined){
-      localStorage.setItem('username','')
+  private get isLoggedIn() {
+    if (localStorage.getItem("username") == undefined) {
+      localStorage.setItem("username", "");
       return false;
-    }
-    else{ 
-        let username =localStorage.getItem('username');
-        if (username!= undefined) {
-          if(username.length > 0 ){
-            return true;
-          }
-          return false;
+    } else {
+      let username = localStorage.getItem("username");
+      if (username != undefined) {
+        if (username.length > 0) {
+          return true;
         }
         return false;
       }
+      return false;
+    }
   }
   private login() {
-    localStorage.setItem('username', this.user.username);
+    localStorage.setItem("username", this.user.username);
 
-    this.user.username='';
-    this.user.password='';
-    this.$router.go(0)
+    this.user.username = "";
+    this.user.password = "";
+    this.$router.go(0);
   }
 
   private logout() {
-    localStorage.setItem('username','');
-    this.$router.go(0)
+    localStorage.setItem("username", "");
+    this.$router.go(0);
   }
 }
 </script>
