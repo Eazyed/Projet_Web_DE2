@@ -4,13 +4,13 @@ export class Product {
     public name:string;
     public isInStock:boolean;
     public logopath:string;
-    public price:number;
+    public price:string;
 
     constructor(){
         this.name = '';
         this.description = '';
         this.isInStock=false;
         this.logopath='';
-        this.price=-1;
+        this.price='-1';
     }
 }
