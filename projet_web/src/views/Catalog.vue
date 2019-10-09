@@ -13,12 +13,14 @@
       <h4>{{item.name}}</h4>
     </b-card-text>
 
-    <b-button  v-if="item.isInStock" href="#" variant="primary">{{item.price}} €</b-button>
-    <b-button v-else href="#" variant="warning">Rupture</b-button>
-  </b-card>
-</b-card-group>
-</div>
-
+      <b-button
+        v-if="item.isInStock"
+        v-bind:to="'/product/'+item.id"
+        variant="primary"
+      >{{item.price}} €</b-button>
+      <b-button v-else v-bind:to="'/product/'+item.id" variant="warning">Rupture</b-button>
+    </b-card>
+  </div>
 </template>
 
 <script lang="ts">
@@ -26,8 +28,7 @@ import { Component, Vue } from "vue-property-decorator";
 import HelloWorld from "@/components/HelloWorld.vue"; // @ is an alias to /src
 import { Product } from "../models/Product";
 import json from "../assets/donnees.json";
-import { ObjectMapper } from 'json-object-mapper';
-
+import { ObjectMapper } from "json-object-mapper";
 
 @Component({
   components: {
@@ -41,9 +42,10 @@ export default class Authentification extends Vue {
   mounted() {
     this.GetCatalog();
   }
-  private GetCatalog(){      
-      this.fullCatalog=ObjectMapper.deserializeArray(Product, json);
-      this.itemsToDisplay=this.fullCatalog;
+  private GetCatalog() {
+    this.fullCatalog = ObjectMapper.deserializeArray(Product, json);
+    this.itemsToDisplay = this.fullCatalog;
+    debugger;
   }
 }
 </script>
