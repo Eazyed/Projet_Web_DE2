@@ -5,8 +5,10 @@ export class Product {
     public isInStock:boolean;
     public logopath:string;
     public price:string;
+    public id:string;
 
     constructor(){
+        this.id='';
         this.name = '';
         this.description = '';
         this.isInStock=false;

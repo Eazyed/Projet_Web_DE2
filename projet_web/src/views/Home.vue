@@ -5,6 +5,7 @@
   <div id="app" class="container">
 
     <h1>Bienvenue dans l'univers de la bière</h1>
+    <b-button to="/catalog" variant="warning" style="center"> <span style="color: #FFFFFF"> Commencer </span> </b-button>
   </div>
   </div>
 </template>
@@ -24,4 +25,5 @@ export default class Home extends Vue {}
 
 <style lang="scss">
   @import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
 </style>

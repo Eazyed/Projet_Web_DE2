@@ -1,4 +1,5 @@
 <template>
+<div>{{itemToDisplay.id}}</div>
 </template>
 
 <script lang="ts">
@@ -19,7 +20,7 @@ export default class ProductView extends Vue {
   mounted() {
     this.GetCatalog();
     this.fullCatalog.forEach(x => {
-        if(x.name===this.$route.params.productname){
+        if(x.id===this.$route.params.productname){
             this.itemToDisplay=x;
         }
     })
