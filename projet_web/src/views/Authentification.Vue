@@ -61,25 +61,36 @@ import { User } from "../models/User";
 export default class Authentification extends Vue {
   private user: User = new User();
 
-  private isLoggedIn: boolean = false;
-
   mounted() {
-    if (Vue.prototype.email.length > 0) {
-      this.isLoggedIn = true;
+  }
+
+  private get isLoggedIn(){
+    if (localStorage.getItem('username') == undefined){
+      localStorage.setItem('username','')
+      return false;
     }
+    else{ 
+        let username =localStorage.getItem('username');
+        if (username!= undefined) {
+          if(username.length > 0 ){
+            return true;
+          }
+          return false;
+        }
+        return false;
+      }
   }
   private login() {
-    debugger;
-    Vue.prototype.email = this.user.username;
-    Vue.prototype.password = this.user.password;
+    localStorage.setItem('username', this.user.username);
+
     this.user.username='';
     this.user.password='';
-    this.isLoggedIn = true;
+    this.$router.go(0)
   }
 
   private logout() {
-    Vue.prototype.email = '';
-    this.isLoggedIn = false;
+    localStorage.setItem('username','');
+    this.$router.go(0)
   }
 }
 </script>

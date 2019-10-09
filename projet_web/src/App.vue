@@ -67,12 +67,20 @@ export default class App extends Vue {
 
 
   public get isAuthentified() {
-    if(Vue.prototype.email == undefined){
-      Vue.prototype.email ='';
+    if (localStorage.getItem('username') == undefined){
+      localStorage.setItem('username','')
+      return false;
     }
-    if (Vue.prototype.email.length > 0) {
-      return true;
-    }
+    else{ 
+        let username =localStorage.getItem('username');
+        if (username!= undefined) {
+          if(username.length > 0 ){
+            return true;
+          }
+          return false;
+        }
+        return false;
+      }
   }
 }
 </script>
