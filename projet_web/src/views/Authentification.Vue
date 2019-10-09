@@ -35,15 +35,15 @@
   <div>
     <form class="login" @submit.prevent="login" v-if="!isLoggedIn">
       <h1>Sign in</h1>
-      <label>User name</label>
+      <label>User name </label>
       <input required v-model="user.username" type="text" placeholder="Snoopy" />
-      <label>Password</label>
+      <label>Password </label>
       <input required v-model="user.password" type="password" placeholder="Password" />
       <hr />
       <button type="submit">Login</button>
     </form>
-    <b-card v-else title="Card Title" style="max-width: 20rem;" class="mb-2">
-      <b-button @click="logout" variant="primary">Log Out</b-button>
+    <b-card v-else title="Card Title" style="b-center" class="mb-2">
+      <b-button @click="logout" variant="danger">Log Out</b-button>
     </b-card>
   </div>
 </template>

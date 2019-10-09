@@ -14,7 +14,7 @@
         <b-collapse id="nav-collapse" is-nav>
           <b-navbar-nav>
             <b-nav-item to="/authent">Link</b-nav-item>
-            <b-nav-item href="#" disabled>Disabled</b-nav-item>
+            <b-nav-item to="/catalog">Catalogue</b-nav-item>
           </b-navbar-nav>
 
           <!-- Right aligned nav items -->
@@ -62,6 +62,7 @@
 <script lang="ts">
 import Vue from "vue";
 import { User } from "./models/User";
+
 export default class App extends Vue {
 
 

@@ -2,6 +2,7 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import Home from './views/Home.vue';
 import Authentification from './views/Authentification.vue'
+import Catalog from './views/Catalog.vue'
 
 Vue.use(Router);
 
@@ -27,6 +28,14 @@ export default new Router({
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component : Authentification,
+    },
+    {
+      path: '/catalog',
+      name: 'catalog',
+      // route level code-splitting
+      // this generates a separate chunk (about.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component : Catalog,
     }
   ],
 });
