@@ -20,6 +20,7 @@
       >{{item.price}} €</b-button>
       <b-button v-else v-bind:to="'/product/'+item.id" variant="warning">Rupture</b-button>
     </b-card>
+  </b-card-group>
   </div>
 </template>
 
