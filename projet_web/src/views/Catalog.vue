@@ -1,26 +1,26 @@
 <template>
-<div>
-  <b-card-group columns>
-  <b-card
-    v-for="item in itemsToDisplay"
-    :key="item.name"
-    :title="item.name"
-    style="b-center"
-    class="mb-2"
-  >
-    <b-card-img :src="require('../assets/'+item.logopath)" img-left style="max-width: 20rem;"></b-card-img>
-    <b-card-text>
-      <h4>{{item.name}}</h4>
-    </b-card-text>
+  <div>
+    <b-card-group columns>
+      <b-card
+        v-for="item in itemsToDisplay"
+        :key="item.name"
+        :title="item.name"
+        style="b-center"
+        class="mb-2"
+      >
+        <b-card-img :src="require('../assets/'+item.logopath)" img-left style="max-width: 20rem;"></b-card-img>
+        <b-card-text>
+          <h4>{{item.name}}</h4>
+        </b-card-text>
 
-      <b-button
-        v-if="item.isInStock"
-        v-bind:to="'/product/'+item.id"
-        variant="primary"
-      >{{item.price}} €</b-button>
-      <b-button v-else v-bind:to="'/product/'+item.id" variant="warning">Rupture</b-button>
-    </b-card>
-  </b-card-group>
+        <b-button
+          v-if="item.isInStock"
+          v-bind:to="'/product/'+item.id"
+          variant="primary"
+        >{{item.price}} €</b-button>
+        <b-button v-else v-bind:to="'/product/'+item.id" variant="warning">Rupture</b-button>
+      </b-card>
+    </b-card-group>
   </div>
 </template>
 

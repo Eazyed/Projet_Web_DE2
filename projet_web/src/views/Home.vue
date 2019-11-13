@@ -1,29 +1,29 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logobiereandco.png">
+    <img alt="Vue logo" src="../assets/logobiereandco.png" />
 
-  <div id="app" class="container">
-
-    <h1>Bienvenue dans l'univers de la bière</h1>
-    <b-button to="/catalog" variant="warning" style="center"> <span style="color: #FFFFFF"> Commencer </span> </b-button>
-  </div>
+    <div id="app" class="container">
+      <h1>Bienvenue dans l'univers de la bière</h1>
+      <b-button to="/catalog" variant="warning" style="center">
+        <span style="color: #FFFFFF">Commencer</span>
+      </b-button>
+    </div>
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
-import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
+import { Component, Vue } from "vue-property-decorator";
+import HelloWorld from "@/components/HelloWorld.vue"; // @ is an alias to /src
 
 @Component({
   components: {
-    HelloWorld,
-  },
+    HelloWorld
+  }
 })
 export default class Home extends Vue {}
 </script>
 
 
 <style lang="scss">
-  @import "../../node_modules/bootstrap/scss/bootstrap.scss";
-
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
 </style>

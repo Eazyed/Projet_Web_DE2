@@ -65,30 +65,28 @@ import "reflect-metadata";
 
 export default class App extends Vue {
 
-
   public get isAuthentified() {
-    if (localStorage.getItem('username') == undefined){
-      localStorage.setItem('username','')
+    if (localStorage.getItem("username") == undefined) {
+      localStorage.setItem("username", "");
       return false;
-    }
-    else{ 
-        let username =localStorage.getItem('username');
-        if (username!= undefined) {
-          if(username.length > 0 ){
-            return true;
-          }
-          return false;
+    } else {
+      let username = localStorage.getItem("username");
+      if (username != undefined) {
+        if (username.length > 0) {
+          return true;
         }
         return false;
       }
+      return false;
+    }
   }
-    private get username(){
-    if (this.isAuthentified){
-      return localStorage.getItem('username');
+  private get username() {
+    if (this.isAuthentified) {
+      return localStorage.getItem("username");
     }
   }
   private logout() {
-    localStorage.setItem('username','');
+    localStorage.setItem("username", "");
     this.$router.go(0);
   }
 }
