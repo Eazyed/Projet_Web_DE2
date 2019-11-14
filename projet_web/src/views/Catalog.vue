@@ -7,10 +7,12 @@
         :title="item.name"
         style="b-center"
         class="mb-2"
+
       >
         <b-card-img :src="require('../assets/'+item.logopath)" img-left style="max-width: 20rem;"></b-card-img>
         <b-card-text>
-          <h4>{{item.name}}</h4>
+          <br>
+          <h5><b>{{item.name}}</b></h5>
         </b-card-text>
 
         <b-button
@@ -47,7 +49,7 @@ export default class Authentification extends Vue {
     this.fullCatalog = ObjectMapper.deserializeArray(Product, json);
     this.itemsToDisplay = this.fullCatalog;
     debugger;
-  }
+  } 
 }
 </script>
 

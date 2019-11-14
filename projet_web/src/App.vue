@@ -15,10 +15,6 @@
           <b-navbar-nav>
             <b-nav-item to="/catalog">Catalogue</b-nav-item>
           </b-navbar-nav>
-        
-          <b-navbar-nav>
-            <b-nav-item to="/cart">Panier</b-nav-item>
-          </b-navbar-nav>
 
           <!-- Right aligned nav items -->
           <b-navbar-nav class="ml-auto">

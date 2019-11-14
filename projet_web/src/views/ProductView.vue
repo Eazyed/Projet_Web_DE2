@@ -1,9 +1,9 @@
 <template>
   <div>
+    {{itemToDisplay.id}}
     <b-input-group style="center">
       <b-form-input
-        v-model="itemToDisplay.quantity"
-        number
+        v-model="itemToDisplay.quantity" number
         type="range"
         min="0"
         max="100"
@@ -16,6 +16,7 @@
       variant="primary"
       v-bind:disabled="itemToDisplay.quantity==0"
     >Ajouter au panier</b-button>
+    
   </div>
 </template>
 
@@ -45,9 +46,10 @@ export default class ProductView extends Vue {
   }
   // Fonction pour ajouter l'item au panier
   private addToCart() {
-    let cart: Product[] = new Array<Product>();
+    let cart: Product[] =  new Array<Product>();
     let cartjson = localStorage.getItem("cart");
     if (cartjson != undefined) {
+
       cart = ObjectMapper.deserializeArray(Product, JSON.parse(cartjson));
     }
 
@@ -61,7 +63,7 @@ export default class ProductView extends Vue {
     if (!addToExsisting) {
       cart.push(this.itemToDisplay);
     }
-    localStorage.setItem("cart", JSON.stringify(cart));
+    localStorage.setItem( "cart", JSON.stringify(cart));
     this.itemToDisplay.quantity = 0;
   }
 }
