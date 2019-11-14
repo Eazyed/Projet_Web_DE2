@@ -4,6 +4,7 @@ import Home from './views/Home.vue';
 import authentification from './views/Authentification.vue';
 import Catalog from './views/Catalog.vue';
 import Cart from './views/Cart.vue';
+import Checkout from './views/Checkout.vue';
 Vue.use(Router);
 
 export default new Router({
@@ -29,6 +30,14 @@ export default new Router({
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: authentification,
+    },
+    {
+      path: '/checkout',
+      name: 'checkout',
+      // route level code-splitting
+      // this generates a separate chunk (about.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: Checkout,
     },
     {
       path: '/product/:productname?',

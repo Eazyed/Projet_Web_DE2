@@ -1,8 +1,9 @@
 <template>
   <div>
+    <h1>Votre panier : </h1>
     <div v-if="itemsToDisplay.length !=0">
-      <b-button @click="EmptyCart">Vider le panier</b-button>
-      <b-card-group columns>
+      <b-button @click="EmptyCart" style="b-center">Vider le panier</b-button>
+      <b-card-group deck>
         <b-card
           v-for="item in itemsToDisplay"
           :key="item.name"
@@ -19,7 +20,8 @@
           <b-form-input v-model="item.quantity" number type="number" style="input-sm" min="0"></b-form-input>
         </b-card>
       </b-card-group>
-      <b-button @click="validateOrder" variant=primary>Passer commande</b-button>
+      <h3>Total : {{total}} €</h3>
+      <b-button @click="validateOrder" block variant=primary>Passer commande</b-button>
     </div>
     <div v-else>Votre panier est vide</div>
   </div>
@@ -49,6 +51,14 @@ export default class Authentification extends Vue {
     this.itemsToDisplay = cart;
   }
 
+    private get total():string{
+      let totalprice:number=0;
+      this.itemsToDisplay.forEach(element => {
+          totalprice+=element.quantity*parseFloat(element.price);
+      });
+      return totalprice.toFixed(2);
+  }
+
   private EmptyCart() {
     localStorage.setItem('cart', '[]');
     this.$router.go(0);
@@ -57,7 +67,7 @@ export default class Authentification extends Vue {
   private validateOrder() {
     localStorage.setItem('cart', JSON.stringify(this.itemsToDisplay));
     // routage vers Checkout
-    this.$router.push('home');
+    this.$router.push('checkout');
   }
 }
 </script>

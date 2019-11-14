@@ -40,7 +40,6 @@
               <template v-slot:button-content>
                 <em>{{username}}</em>
               </template>
-              <b-dropdown-item href="#">Profile</b-dropdown-item>
               <b-dropdown-item to="/authent">Sign Out</b-dropdown-item>
             </b-nav-item-dropdown>
 
