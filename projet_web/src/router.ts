@@ -1,51 +1,67 @@
-import Vue from "vue";
-import Router from "vue-router";
-import Home from "./views/Home.vue";
-import Authentification from "./views/Authentification.vue";
-import Catalog from "./views/Catalog.vue";
-
+import Vue from 'vue';
+import Router from 'vue-router';
+import Home from './views/Home.vue';
+import authentification from './views/Authentification.vue';
+import Catalog from './views/Catalog.vue';
+import Cart from './views/Cart.vue';
+import Checkout from './views/Checkout.vue';
 Vue.use(Router);
 
 export default new Router({
   routes: [
     {
-      path: "/",
-      name: "home",
-      component: Home
+      path: '/',
+      name: 'home',
+      component: Home,
     },
     {
-      path: "/about",
-      name: "about",
+      path: '/about',
+      name: 'about',
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () =>
-        import(/* webpackChunkName: "about" */ "./views/About.vue")
+        import(/* webpackChunkName: "about" */ './views/About.vue'),
     },
     {
-      path: "/authent",
-      name: "authent",
+      path: '/authent',
+      name: 'authent',
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: Authentification
+      component: authentification,
     },
     {
-      path: "/product/:productname?",
-      name: "product",
+      path: '/checkout',
+      name: 'checkout',
+      // route level code-splitting
+      // this generates a separate chunk (about.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: Checkout,
+    },
+    {
+      path: '/product/:productname?',
+      name: 'product',
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () =>
-        import(/* webpackChunkName: "about" */ "./views/ProductView.vue")
+        import(/* webpackChunkName: "about" */ './views/ProductView.vue'),
     },
     {
-      path: "/catalog",
-      name: "catalog",
+      path: '/catalog',
+      name: 'catalog',
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: Catalog
-    }
-  ]
+      component: Catalog,
+    },    {
+      path: '/cart',
+      name: 'cart',
+      // route level code-splitting
+      // this generates a separate chunk (about.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: Cart,
+    },
+  ],
 });

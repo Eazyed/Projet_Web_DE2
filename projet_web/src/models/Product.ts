@@ -8,12 +8,12 @@ export class Product {
   public quantity: number;
 
   constructor() {
-    this.id = "";
-    this.name = "";
-    this.description = "";
+    this.id = '';
+    this.name = '';
+    this.description = '';
     this.isInStock = false;
-    this.logopath = "";
-    this.price = "-1";
+    this.logopath = '';
+    this.price = '-1';
     this.quantity = 0 as number;
   }
 }

@@ -36,7 +36,6 @@
               <template v-slot:button-content>
                 <em>{{username}}</em>
               </template>
-              <b-dropdown-item href="#">Profile</b-dropdown-item>
               <b-dropdown-item to="/authent">Sign Out</b-dropdown-item>
             </b-nav-item-dropdown>
 
@@ -59,18 +58,18 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
-import { User } from "./models/User";
-import "reflect-metadata";
+import Vue from 'vue';
+import { User } from './models/User';
+import 'reflect-metadata';
 
 export default class App extends Vue {
 
   public get isAuthentified() {
-    if (localStorage.getItem("username") == undefined) {
-      localStorage.setItem("username", "");
+    if (localStorage.getItem('username') == undefined) {
+      localStorage.setItem('username', '');
       return false;
     } else {
-      let username = localStorage.getItem("username");
+      const username = localStorage.getItem('username');
       if (username != undefined) {
         if (username.length > 0) {
           return true;
@@ -82,11 +81,11 @@ export default class App extends Vue {
   }
   private get username() {
     if (this.isAuthentified) {
-      return localStorage.getItem("username");
+      return localStorage.getItem('username');
     }
   }
   private logout() {
-    localStorage.setItem("username", "");
+    localStorage.setItem('username', '');
     this.$router.go(0);
   }
 }

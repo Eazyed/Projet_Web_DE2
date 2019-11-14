@@ -27,22 +27,22 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
-import HelloWorld from "@/components/HelloWorld.vue"; // @ is an alias to /src
-import { Product } from "../models/Product";
-import json from "../assets/donnees.json";
-import { ObjectMapper } from "json-object-mapper";
+import { Component, Vue } from 'vue-property-decorator';
+import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
+import { Product } from '../models/Product';
+import json from '../assets/donnees.json';
+import { ObjectMapper } from 'json-object-mapper';
 
 @Component({
   components: {
-    HelloWorld
-  }
+    HelloWorld,
+  },
 })
 export default class Authentification extends Vue {
   private fullCatalog: Product[] = new Array<Product>();
   private itemsToDisplay: Product[] = new Array<Product>();
 
-  mounted() {
+  public mounted() {
     this.GetCatalog();
   }
   private GetCatalog() {
