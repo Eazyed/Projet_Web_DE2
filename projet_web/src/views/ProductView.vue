@@ -32,9 +32,9 @@ export default class ProductView extends Vue {
   private fullCatalog: Product[] = new Array<Product>();
   private itemToDisplay: Product = new Product();
 
-  mounted() {
+  public mounted() {
     this.GetCatalog();
-    this.fullCatalog.forEach(x => {
+    this.fullCatalog.forEach((x) => {
       if (x.id === this.$route.params.productname) {
         this.itemToDisplay = x;
       }
@@ -46,13 +46,13 @@ export default class ProductView extends Vue {
   // Fonction pour ajouter l'item au panier
   private addToCart() {
     let cart: Product[] = new Array<Product>();
-    let cartjson = localStorage.getItem("cart");
+    const cartjson = localStorage.getItem("cart");
     if (cartjson != undefined) {
       cart = ObjectMapper.deserializeArray(Product, JSON.parse(cartjson));
     }
 
     let addToExsisting: Boolean = false;
-    cart.forEach(product => {
+    cart.forEach((product) => {
       if (product.id == this.itemToDisplay.id) {
         product.quantity += this.itemToDisplay.quantity;
         addToExsisting = true;

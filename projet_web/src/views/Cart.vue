@@ -26,23 +26,23 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
-import { Product } from "../models/Product";
-import json from "../assets/donnees.json";
-import { ObjectMapper } from "json-object-mapper";
+import { Component, Vue } from 'vue-property-decorator';
+import { Product } from '../models/Product';
+import json from '../assets/donnees.json';
+import { ObjectMapper } from 'json-object-mapper';
 
 @Component({
-  components: {}
+  components: {},
 })
 export default class Authentification extends Vue {
   private itemsToDisplay: Product[] = new Array<Product>();
 
-  mounted() {
+  public mounted() {
     this.GetCart();
   }
   private GetCart() {
     let cart: Product[] = new Array<Product>();
-    let cartjson = localStorage.getItem("cart");
+    const cartjson = localStorage.getItem('cart');
     if (cartjson != undefined) {
       cart = ObjectMapper.deserializeArray(Product, JSON.parse(cartjson));
     }
@@ -50,14 +50,14 @@ export default class Authentification extends Vue {
   }
 
   private EmptyCart() {
-    localStorage.setItem("cart", "[]");
+    localStorage.setItem('cart', '[]');
     this.$router.go(0);
   }
 
   private validateOrder() {
-    localStorage.setItem("cart", JSON.stringify(this.itemsToDisplay));
-    //routage vers Checkout
-    this.$router.push("home");
+    localStorage.setItem('cart', JSON.stringify(this.itemsToDisplay));
+    // routage vers Checkout
+    this.$router.push('home');
   }
 }
 </script>
