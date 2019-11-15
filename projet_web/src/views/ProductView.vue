@@ -1,21 +1,27 @@
 <template>
   <div>
     <b-input-group style="center">
+      <b-col sm="10">
       <b-form-input
         v-model="itemToDisplay.quantity"
         number
         type="range"
         min="0"
-        max="100"
+        max="50"
         style="input-sm"
       ></b-form-input>
-      <label>Quantité : {{this.itemToDisplay.quantity}}</label>
+      </b-col>      
     </b-input-group>
+    <b-col sm="10"><br>Quantité : {{this.itemToDisplay.quantity}}
+    </b-col>
+    <br>
+    <b-col sm="10">
     <b-button
       @click="addToCart"
       variant="primary"
       v-bind:disabled="itemToDisplay.quantity==0"
     >Ajouter au panier</b-button>
+    </b-col>
   </div>
 </template>
 
