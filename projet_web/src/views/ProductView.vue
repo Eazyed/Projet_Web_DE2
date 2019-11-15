@@ -1,6 +1,23 @@
 <template>
   <div>
     <b-input-group style="center">
+      
+      <b-card
+        :key="itemToDisplay.name"
+        :title="itemToDisplay.name"
+        style="b-center;height: 700px"
+        class="mb-2"
+      >
+        <b-card-img :src="require('../assets/'+itemToDisplay.logopath)" img-left style="max-width: 20rem;"></b-card-img>
+        <b-card-text>
+          <br>
+          <h5><b>{{itemToDisplay.name}}</b></h5>
+          <br>
+          <h5><b>{{itemToDisplay.price}} €</b></h5>
+          <br>
+          {{itemToDisplay.description}}
+        </b-card-text>
+      </b-card>
       <b-col sm="10">
       <b-form-input
         v-model="itemToDisplay.quantity"
