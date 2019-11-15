@@ -35,9 +35,10 @@
   <div>
     <form class="login" @submit.prevent="login" v-if="!isLoggedIn">
       <h1>Sign in</h1>
-      <label>User name</label>
-      <input required v-model="user.username" type="text" placeholder="Snoopy" />
-      <label>Password</label>
+      <label>User name :</label>
+      <input required v-model="user.username" type="text" placeholder="User Name" />
+      <br>
+      <label>Password :</label>
       <input required v-model="user.password" type="password" placeholder="Password" />
       <hr />
       <button type="submit">Login</button>

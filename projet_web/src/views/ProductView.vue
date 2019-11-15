@@ -45,7 +45,7 @@
     <b-col sm="10" align="center">
     <b-button
       @click="addToCart"
-      variant="primary"
+      variant="warning"
       v-bind:disabled="itemToDisplay.quantity==0"
     >Ajouter au panier</b-button>
     </b-col>  
