@@ -1,7 +1,6 @@
 <template>
   <div>
-    <b-input-group style="center">
-      
+    <b-card-group columns style="center">      
       <b-card
         :key="itemToDisplay.name"
         :title="itemToDisplay.name"
@@ -18,7 +17,16 @@
           {{itemToDisplay.description}}
         </b-card-text>
       </b-card>
-      <b-col sm="10">
+
+      <b-col sm="10" align="center">
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
       <b-form-input
         v-model="itemToDisplay.quantity"
         number
@@ -27,18 +35,19 @@
         max="50"
         style="input-sm"
       ></b-form-input>
-      </b-col>      
-    </b-input-group>
-    <b-col sm="10"><br>Quantité : {{this.itemToDisplay.quantity}}
+      </b-col>  
+
+    <b-col sm="10 " align="center"><br>Quantité : {{this.itemToDisplay.quantity}}
     </b-col>
     <br>
-    <b-col sm="10">
+    <b-col sm="10" align="center">
     <b-button
       @click="addToCart"
       variant="primary"
       v-bind:disabled="itemToDisplay.quantity==0"
     >Ajouter au panier</b-button>
-    </b-col>
+    </b-col>  
+  </b-card-group>
   </div>
 </template>
 
