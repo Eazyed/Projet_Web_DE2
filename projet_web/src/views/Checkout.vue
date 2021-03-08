@@ -2,7 +2,7 @@
   <div>
     <h1>Merci {{username}}</h1>
     <h2>Votre commande n°{{orderNumber}} d'une valeur de : {{total}} € a bien été prise en compte</h2>
-    <h3>Clickez ici pour télécharger un reçu</h3>
+    <h3>Cliquez ici pour télécharger un reçu</h3>
     <b-button variant="primary" @click="downloadCSV">Télécharger reçu</b-button>
   </div>
 </template>

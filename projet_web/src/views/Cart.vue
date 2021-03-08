@@ -14,14 +14,16 @@
           <b-card-img :src="require('../assets/'+item.logopath)" img-left style="max-width: 20rem;"></b-card-img>
           <b-card-text>
             <h4>{{item.name}}</h4>
-            <h5>Quantité : {{item.quantity}}</h5>
-            <h6>Prix : {{parseFloat(Math.round(parseFloat(item.price)*item.quantity * 100) / 100).toFixed(2)}} €</h6>
+            <h6>Quantité : {{item.quantity}}</h6>
+            <h5>Prix : {{parseFloat(Math.round(parseFloat(item.price)*item.quantity * 100) / 100).toFixed(2)}} €</h5>
           </b-card-text>
-          <b-form-input v-model="item.quantity" number type="number" style="input-sm" min="0"></b-form-input>
+          <b-col align="center">
+          <b-form-input v-model="item.quantity" number type="number" style="input-sm;max-width: 20rem" min="0"></b-form-input>
+          </b-col>
         </b-card>
       </b-card-group>
       <h3>Total : {{total}} €</h3>
-      <b-button @click="validateOrder" block variant=primary>Passer commande</b-button>
+      <b-button @click="validateOrder" variant=warning style="max-width: 20rem;align: center">Passer commande</b-button>
     </div>
     <div v-else>Votre panier est vide</div>
   </div>

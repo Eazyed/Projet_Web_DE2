@@ -17,9 +17,9 @@
         <b-button
           v-if="item.isInStock"
           v-bind:to="'/product/'+item.id"
-          variant="primary"
+          variant="warning"
         >{{item.price}} €</b-button>
-        <b-button disabled v-else v-bind:to="'/product/'+item.id" variant="warning">Rupture</b-button>
+        <b-button disabled v-else v-bind:to="'/product/'+item.id" variant="danger">Rupture</b-button>
       </b-card>
     </b-card-group>
   </div>

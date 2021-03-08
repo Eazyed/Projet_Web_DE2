@@ -27,13 +27,15 @@
       <br>
       <br>
       <br>
+      <br>
+      <br>
       <b-form-input
         v-model="itemToDisplay.quantity"
         number
         type="range"
         min="0"
         max="50"
-        style="input-sm"
+        style="input-sm;width= 100px"
       ></b-form-input>
       </b-col>  
 
@@ -43,7 +45,7 @@
     <b-col sm="10" align="center">
     <b-button
       @click="addToCart"
-      variant="primary"
+      variant="warning"
       v-bind:disabled="itemToDisplay.quantity==0"
     >Ajouter au panier</b-button>
     </b-col>  
